@@ -1,0 +1,10 @@
+---
+import Card from "./Card.astro"
+const { post } = Astro.props;
+---
+
+<Card
+    title={post.frontmatter.title}
+    href={post.url}
+    description={post.frontmatter.description}
+/>

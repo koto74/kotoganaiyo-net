@@ -1,42 +1,91 @@
 ---
+import Layout from "../layouts/Layout.astro";
 import "../styles/global.css"
-import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
 
-const pageTitle = "KotoのOutput";
-const identity = {
-  firstName: "Sarah",
-  country: "Canada",
-  occupation: "Technical Writer",
-  hobbies: ["photography", "birdwatching", "baseball"],
-};
-const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+const sns = [
+  {
+    name: "Twitter",
+    url: "https://twitter.com/kotoganaiyo",
+    icon: "https://cdn.svgporn.com/logos/twitter.svg",
+  },
+  {
+    name: "GitHub",
+    url: "https://github.com/koto74",
+    icon: "https://cdn.svgporn.com/logos/github-icon.svg",
+  },
+];
+
+const skills = [
+  {
+    name: "C++",
+    level: "Intermediate ",
+    icon: "https://cdn.svgporn.com/logos/c-plusplus.svg",
+  },
+];
 ---
 
-<Navigation />
-
-<h1>Here are a few facts about me:</h1>
-<ul>
-  <li>My name is {identity.firstName}.</li>
-  <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
-  {identity.hobbies.length >= 2 && 
-    <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
-  } 
-</ul>
-<p>My skills are:</p>
-<ul>
-  {skills.map((skill) => <li class="skill">{skill}</li>)}
-</ul>
-
-<Footer />
+<Layout title="KotoのOutput | About">
+  <h1>Kotoについて</h1>
+  <img src="/koto.jpg" alt="rogo" />
+  <p>
+    色々勉強中
+    <br>
+    基本的にポンコツです。
+  </p>
+  <h2>SNS</h2>
+  <ul class="sns-icon-ul">
+    {
+      sns.map((s) => (
+        <li class="sns">
+          <a href={s.url} target="_blank" rel="noopener noreferrer">
+            {s.name} - <img src={s.icon} alt={s.name} class="sns-icon" />
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+  <h2>Skills</h2>
+  <ul>
+    {
+      skills.map((skill) => (
+        <li class={skill.level}>
+          {skill.name} - {skill.level} -
+          <img src={skill.icon} alt={skill.name} class="lang-icon" />
+        </li>
+      ))
+    }
+  </ul>
+</Layout>
 
 <style>
-    h1 {
-      color: purple;
-      font-size: 2rem;
-    }
-    .skill {
-      color: green;
-      font-weight: bold;
-    }
+  .skill {
+    color: blue;
+    font-weight: bold;
+  }
+  .sns {
+    color: green;
+    font-weight: bold;
+  }
+  .sns-icon-ul {
+    display: grid;
+    grid-gap: 1rem;
+  }
+  img {
+    width: 200px;
+    height: 200px;
+  }
+  .lang-icon {
+    width: 20px;
+    height: 20px;
+  }
+  .Advanced {
+    color: red;
+  }
+  .Intermediate {
+    color: blue;
+  }
+  .sns-icon {
+    width: 20px;
+    height: 20px;
+  }
 </style>
