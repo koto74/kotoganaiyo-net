@@ -3,13 +3,17 @@ export interface Props {
 	title: string;
 	href: string;
 	description: string;
+	pubDate: string;
 }
 
-const { href, title, description } = Astro.props;
+const { href, title, description, pubDate } = Astro.props;
 ---
 
 <li class="link-card">
 	<a href={href}>
+		<p>
+			{pubDate}
+		</p>
 		<h2>
 			{title}
 		</h2>

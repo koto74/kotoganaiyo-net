@@ -1,13 +1,15 @@
 ---
-const platform = "github";
-const username = "withastro";
-import Social from './Social.astro';
+const platform = "twitter";
 ---
 
 <footer>
-    <Social platform="twitter" username="astrodotbuild" />
-    <Social platform="github" username="withastro" />
-    <Social platform="youtube" username="astrodotbuild" />
+    <p>
+      Learn more about me on
+      <a
+      href="https://twitter.com/kotoganaiyo"
+      target="_blank"
+      rel="noopener noreferrer">{platform}</a>
+    </p>
 </footer>
 
 <style>
@@ -16,4 +18,4 @@ import Social from './Social.astro';
       gap: 1rem;
       margin-top: 2rem;
     }
-  </style>
+</style>
