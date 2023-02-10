@@ -25,40 +25,43 @@ const skills = [
 ---
 
 <Layout title="KotoのOutput | About">
-  <h1>Kotoについて</h1>
-  <img src="/koto.jpg" alt="rogo" />
-  <p>
-    色々勉強中
-    <br>
-    基本的にポンコツです。
-  </p>
-  <h2>SNS</h2>
-  <ul class="sns-icon-ul">
-    {
-      sns.map((s) => (
-        <li class="sns">
-          <a href={s.url} target="_blank" rel="noopener noreferrer">
-            {s.name} - <img src={s.icon} alt={s.name} class="sns-icon" />
-          </a>
-        </li>
-      ))
-    }
-  </ul>
-  <h2>好きなもの</h2>
-  <ui>
-    
-  </ui>
-  <h2>Skills</h2>
-  <ul>
-    {
-      skills.map((skill) => (
-        <li class={skill.level}>
-          {skill.name} - {skill.level} -
-          <img src={skill.icon} alt={skill.name} class="lang-icon" />
-        </li>
-      ))
-    }
-  </ul>
+  <nav class="about-master">
+    <h1>Kotoについて</h1>
+    <img src="/koto.jpg" alt="rogo" />
+    <p>
+      色々勉強中
+      <br>
+      基本的にポンコツです。
+    </p>
+    <h2>SNS</h2>
+    <ul class="sns-icon-ul">
+      {
+        sns.map((s) => (
+          <li class="sns">
+            <a href={s.url} target="_blank" rel="noopener noreferrer">
+              {s.name} - <img src={s.icon} alt={s.name} class="sns-icon" />
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <h2>好きなもの</h2>
+    <ui>
+      
+    </ui>
+    <h2>Skills</h2>
+    <ul>
+      {
+        skills.map((skill) => (
+          <li class={skill.level}>
+            {skill.name} - {skill.level} -
+            <img src={skill.icon} alt={skill.name} class="lang-icon" />
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+  
 </Layout>
 
 <style>
@@ -91,5 +94,9 @@ const skills = [
   .sns-icon {
     width: 20px;
     height: 20px;
+  }
+  .about-master {
+    margin: 0 auto;
+    max-width: 80ch;
   }
 </style>
