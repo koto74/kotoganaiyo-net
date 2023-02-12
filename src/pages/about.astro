@@ -15,12 +15,25 @@ const sns = [
   },
 ];
 
+const like = [
+  {
+    name: "drawing",
+  },
+  {
+    name: "watch animes",
+  },
+  {
+    name: "sleeping"
+  }
+];
+
 const skills = [
   {
     name: "C++",
-    level: "Intermediate ",
+    level: "Advanced ",
     icon: "https://cdn.svgporn.com/logos/c-plusplus.svg",
   },
+  
 ];
 ---
 
@@ -31,7 +44,7 @@ const skills = [
     <p>
       色々勉強中
       <br>
-      基本的にポンコツです。
+      休日は基本的に引きこもってます。
     </p>
     <h2>SNS</h2>
     <ul class="sns-icon-ul">
@@ -45,10 +58,16 @@ const skills = [
         ))
       }
     </ul>
-    <h2>好きなもの</h2>
-    <ui>
-      
-    </ui>
+    <h2>like</h2>
+    <ul class="like-ui">
+      {
+        like.map((like) => (
+          <li class="like">
+            {like.name}
+          </li>
+        ))
+      }
+    </ul>
     <h2>Skills</h2>
     <ul>
       {
@@ -73,6 +92,14 @@ const skills = [
     color: green;
     font-weight: bold;
   }
+  .like {
+    color: black;
+    font-weight: bold;
+  }
+  .like-ui {
+    display: grid;
+    grid-gap: 1rem;
+  }
   .sns-icon-ul {
     display: grid;
     grid-gap: 1rem;
@@ -96,8 +123,15 @@ const skills = [
     height: 20px;
   }
   .about-master {
-    margin: 0 20px;
+    margin: 0 auto;
     max-width: 80ch;
-    
   }
+
+  @media screen and (max-width: 480) {
+
+    .about-master {
+      margin: 0 20px;
+    }
+  }
+
 </style>
