@@ -53,4 +53,11 @@ const { current = '' } = Astro.props;
   .selected::before {
     background: var(--primary-color);
   }
+
+  @media screen and (max-width: 720px) {
+
+    .nav-links {
+      margin: auto;
+    }
+}
 </style>
